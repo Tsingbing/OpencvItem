@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5B5011B5-7656-39AB-A3BD-1672618889F7}</ProjectGuid>
+    <RootNamespace>OpencvItem</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v140</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>OpencvItem</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v140</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>OpencvItemd</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">OpencvItem</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OpencvItemd</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore;release;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_PLUGIN;QT_QUICK_LIB;QT_GUI_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>D:\opencv-3.2-build\install\x64\vc14\lib\opencv_aruco320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_bgsegm320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_bioinspired320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_calib3d320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_ccalib320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_core320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_datasets320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_dnn320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_dpm320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_face320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_features2d320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_flann320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_fuzzy320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_highgui320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_imgcodecs320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_imgproc320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_line_descriptor320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_ml320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_objdetect320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_optflow320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_phase_unwrapping320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_photo320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_plot320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_reg320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_rgbd320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_saliency320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_shape320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_stereo320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_stitching320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_structured_light320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_superres320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_surface_matching320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_text320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_tracking320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_video320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_videoio320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_videostab320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_xfeatures2d320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_ximgproc320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_xobjdetect320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_xphoto320d.lib;$(QTDIR)\lib\Qt5Quick.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Qml.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\OpencvItem.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_PLUGIN;QT_QUICK_LIB;QT_GUI_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore;debug;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_PLUGIN;QT_QUICK_LIB;QT_GUI_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>D:\opencv-3.2-build\install\x64\vc14\lib\opencv_aruco320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_bgsegm320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_bioinspired320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_calib3d320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_ccalib320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_core320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_datasets320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_dnn320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_dpm320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_face320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_features2d320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_flann320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_fuzzy320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_highgui320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_imgcodecs320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_imgproc320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_line_descriptor320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_ml320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_objdetect320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_optflow320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_phase_unwrapping320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_photo320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_plot320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_reg320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_rgbd320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_saliency320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_shape320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_stereo320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_stitching320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_structured_light320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_superres320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_surface_matching320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_text320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_tracking320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_video320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_videoio320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_videostab320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_xfeatures2d320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_ximgproc320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_xobjdetect320d.lib;D:\opencv-3.2-build\install\x64\vc14\lib\opencv_xphoto320d.lib;$(QTDIR)\lib\Qt5Quickd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Qmld.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\OpencvItemd.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_PLUGIN;QT_QUICK_LIB;QT_GUI_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Debug\moc_camerathread.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_opencvitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_opencvitem_plugin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="matchTemp\MatchTemp.cpp" />
+    <ClCompile Include="perspectiveCorrect\PerspectiveCorrect.cpp" />
+    <ClCompile Include="cameraThread\camerathread.cpp" />
+    <ClCompile Include="opencvitem.cpp" />
+    <ClCompile Include="opencvitem_plugin.cpp" />
+    <ClCompile Include="Release\moc_opencvitem_plugin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="matchTemp\MatchTemp.h" />
+    <ClInclude Include="perspectiveCorrect\PerspectiveCorrect.h" />
+    <CustomBuild Include="cameraThread\camerathread.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_PLUGIN -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I." "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore" "-I.\release" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing camerathread.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DWIN64 -DQT_PLUGIN -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_WINDLL "-I." "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore" "-I.\debug" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing camerathread.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="opencvitem.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_PLUGIN -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I." "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore" "-I.\release" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing opencvitem.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DWIN64 -DQT_PLUGIN -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_WINDLL "-I." "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore" "-I.\debug" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing opencvitem.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="opencvitem_plugin.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_PLUGIN -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I." "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore" "-I.\release" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing opencvitem_plugin.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DWIN64 -DQT_PLUGIN -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_WINDLL "-I." "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQuick" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtGui" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtANGLE" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtQml" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtNetwork" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\include\QtCore" "-I.\debug" "-ID:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\win32-msvc"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing opencvitem_plugin.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Release\moc_camerathread.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_opencvitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E D:\Qt\Qt5.9.1\5.9.1\msvc2015_64\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="qmldir" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_x64="msvc2015_64" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
