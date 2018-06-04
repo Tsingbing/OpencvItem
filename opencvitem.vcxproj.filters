@@ -80,6 +80,12 @@
     <ClCompile Include="Release\moc_opencvitem_plugin.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="dehaze\convConst.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dehaze\dehaze.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matchTemp\MatchTemp.h">
@@ -97,6 +103,18 @@
     <CustomBuild Include="opencvitem_plugin.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <ClInclude Include="dehaze\convConst.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dehaze\sse.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dehaze\wrappers.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dehaze\dehaze.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">

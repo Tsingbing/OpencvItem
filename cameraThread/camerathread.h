@@ -3,6 +3,9 @@
 #include <QThread>
 #include <QImage>
 #include <opencv.hpp>
+//#include <opencv2/opencv.hpp>
+#include "./dehaze/dehaze.h"
+
 #define VIDEOWIDTH  1920   //摄像头视频帧宽度
 #define VIDEOHEIGHT 1080   //摄像头视频帖高度
 #define BOXWIDTH  400     //银行卡扫描区宽度
@@ -21,6 +24,7 @@ public:
 
 signals:
     void sigImage(QImage&);
+	void sigImage1(QImage&);
     void sigError(QString);
 
 protected:
@@ -28,8 +32,11 @@ protected:
 
 private:
     cv::Rect rect;
-
+	Dehaze dehaze;
     QImage toQImage(cv::Mat &);
+
+public:
+	int ShowFlag;
 };
 
 #endif // CAMERATHREAD_H

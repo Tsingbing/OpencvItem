@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencvitem", "opencvitem.vcxproj", "{5B5011B5-7656-39AB-A3BD-1672618889F7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serialportitem", "..\SerialPortItem\serialportitem.vcxproj", "{E48B2647-E210-39E6-B36A-D4191B4E4418}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{5B5011B5-7656-39AB-A3BD-1672618889F7}.Debug|x64.Build.0 = Debug|x64
 		{5B5011B5-7656-39AB-A3BD-1672618889F7}.Release|x64.ActiveCfg = Release|x64
 		{5B5011B5-7656-39AB-A3BD-1672618889F7}.Release|x64.Build.0 = Release|x64
+		{E48B2647-E210-39E6-B36A-D4191B4E4418}.Debug|x64.ActiveCfg = Debug|x64
+		{E48B2647-E210-39E6-B36A-D4191B4E4418}.Debug|x64.Build.0 = Debug|x64
+		{E48B2647-E210-39E6-B36A-D4191B4E4418}.Release|x64.ActiveCfg = Release|x64
+		{E48B2647-E210-39E6-B36A-D4191B4E4418}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

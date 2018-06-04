@@ -1,11 +1,11 @@
 ﻿#include "camerathread.h"
-#include "../matchTemp/MatchTemp.h"
-#include "../perspectiveCorrect/PerspectiveCorrect.h"
+
 #include <QDebug>
 using namespace cv;
 
 CameraThread::CameraThread(QObject *parent):
     QThread(parent)
+	, ShowFlag(0)
 {
 
 }
@@ -33,6 +33,7 @@ void CameraThread::run()
     rect = Rect(boxX,boxY,BOXWIDTH,BOXHEIGHT);
     //创建掩码矩阵
     Mat frame,alphaROI,RGBFrame;
+	Mat dst;
     //在opencv中定位文本坐标
 //    String text(FRAMETEXT);
 //    int fontScale = 1,thick=2,baseLine=0;
@@ -55,12 +56,12 @@ void CameraThread::run()
         //alphaROI = frame(rect);
         //alphaROI.convertTo(alphaROI,-1,2,0);
 
-        line(frame,Point(boxX - VIDEOLINEWIDTH,boxY),Point(boxX - VIDEOLINEWIDTH,boxY + VIDEOLABELVER),Scalar(0,255,0),VIDEOLINEWIDTH);
-        line(frame,Point(boxX - VIDEOLINEWIDTH,boxY - VIDEOLINEWIDTH),Point(boxX + BOXWIDTH,boxY - VIDEOLINEWIDTH),Scalar(0,255,0),VIDEOLINEWIDTH);
-        line(frame,Point(boxX + BOXWIDTH + 1,boxY),Point(boxX + BOXWIDTH + 1,boxY + VIDEOLABELVER),Scalar(0,255,0),VIDEOLINEWIDTH);
-        line(frame,Point(boxX - VIDEOLINEWIDTH,boxY  + BOXHEIGHT - VIDEOLABELVER),Point(boxX - VIDEOLINEWIDTH,boxY + BOXHEIGHT),Scalar(0,255,0),VIDEOLINEWIDTH);
-        line(frame,Point(boxX - VIDEOLINEWIDTH,boxY  + BOXHEIGHT + 1),Point(boxX + BOXWIDTH,boxY  + BOXHEIGHT + 1),Scalar(0,255,0),VIDEOLINEWIDTH);
-        line(frame,Point(boxX + BOXWIDTH + 1,boxY + BOXHEIGHT - VIDEOLABELVER),Point(boxX + BOXWIDTH + 1,boxY + BOXHEIGHT),Scalar(0,255,0),VIDEOLINEWIDTH);
+        //line(frame,Point(boxX - VIDEOLINEWIDTH,boxY),Point(boxX - VIDEOLINEWIDTH,boxY + VIDEOLABELVER),Scalar(0,255,0),VIDEOLINEWIDTH);
+        //line(frame,Point(boxX - VIDEOLINEWIDTH,boxY - VIDEOLINEWIDTH),Point(boxX + BOXWIDTH,boxY - VIDEOLINEWIDTH),Scalar(0,255,0),VIDEOLINEWIDTH);
+        //line(frame,Point(boxX + BOXWIDTH + 1,boxY),Point(boxX + BOXWIDTH + 1,boxY + VIDEOLABELVER),Scalar(0,255,0),VIDEOLINEWIDTH);
+        //line(frame,Point(boxX - VIDEOLINEWIDTH,boxY  + BOXHEIGHT - VIDEOLABELVER),Point(boxX - VIDEOLINEWIDTH,boxY + BOXHEIGHT),Scalar(0,255,0),VIDEOLINEWIDTH);
+        //line(frame,Point(boxX - VIDEOLINEWIDTH,boxY  + BOXHEIGHT + 1),Point(boxX + BOXWIDTH,boxY  + BOXHEIGHT + 1),Scalar(0,255,0),VIDEOLINEWIDTH);
+        //line(frame,Point(boxX + BOXWIDTH + 1,boxY + BOXHEIGHT - VIDEOLABELVER),Point(boxX + BOXWIDTH + 1,boxY + BOXHEIGHT),Scalar(0,255,0),VIDEOLINEWIDTH);
         //在opencv中添加文本
 //        putText(frame,text,org,FONT_HERSHEY_PLAIN,fontScale,Scalar(0,255,0),thick);
         //画出文本所在的矩形框
@@ -74,7 +75,7 @@ void CameraThread::run()
         //转换格式，并发给GUI显示
         emit sigImage(toQImage(frame));
 
-        waitKey(30);
+       
 
         //MatchTemp matchBank(alphaROI,imread(TEMPLATIMG));
         //Rect m_rect = matchBank.match(CV_TM_SQDIFF);
@@ -86,7 +87,27 @@ void CameraThread::run()
         //qDebug() << QStringLiteral("已检测到银行卡") << m_rect.x << m_rect.y;
         //PerspectiveCorrect perspective(alphaROI);
         //perspective.correct(alphaROI);
-        emit sigImage(toQImage(frame));
+
+		/*line(frame,Point(boxX - VIDEOLINEWIDTH,boxY),Point(boxX - VIDEOLINEWIDTH,boxY + VIDEOLABELVER),Scalar(0,255,0),VIDEOLINEWIDTH);
+		line(frame,Point(boxX - VIDEOLINEWIDTH,boxY - VIDEOLINEWIDTH),Point(boxX + BOXWIDTH,boxY - VIDEOLINEWIDTH),Scalar(0,255,0),VIDEOLINEWIDTH);
+		line(frame,Point(boxX + BOXWIDTH + 1,boxY),Point(boxX + BOXWIDTH + 1,boxY + VIDEOLABELVER),Scalar(0,255,0),VIDEOLINEWIDTH);
+		line(frame,Point(boxX - VIDEOLINEWIDTH,boxY  + BOXHEIGHT - VIDEOLABELVER),Point(boxX - VIDEOLINEWIDTH,boxY + BOXHEIGHT),Scalar(0,255,0),VIDEOLINEWIDTH);
+		line(frame,Point(boxX - VIDEOLINEWIDTH,boxY  + BOXHEIGHT + 1),Point(boxX + BOXWIDTH,boxY  + BOXHEIGHT + 1),Scalar(0,255,0),VIDEOLINEWIDTH);
+		line(frame,Point(boxX + BOXWIDTH + 1,boxY + BOXHEIGHT - VIDEOLABELVER),Point(boxX + BOXWIDTH + 1,boxY + BOXHEIGHT),Scalar(0,255,0),VIDEOLINEWIDTH);*/
+		
+		if (ShowFlag == 2)
+		{
+			imshow("frame",frame);
+			double t = (double)cvGetTickCount();
+			dehaze.demo(frame, dst);
+			double t2 = (double)cvGetTickCount() - t;
+			qDebug() << t2 / cvGetTickFrequency() * 1000 << endl;
+			imshow("dst1", dst);
+		}		
+		waitKey(30);
+
+		//emit sigImage(toQImage(dst));
+		emit sigImage(toQImage(frame));
     }
 }
 
